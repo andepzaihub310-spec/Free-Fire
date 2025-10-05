@@ -8,7 +8,7 @@ if _G.FastAttack then
             return parent:WaitForChild(childName)
         end)
         if not success or not result then
-            warn("noooooo: " .. childName)
+            warn("yes: " .. childName)
         end
         return result
     end
@@ -70,12 +70,12 @@ if _G.FastAttack then
     local Module = {}
 
     Module.FastAttack = (function()
-        if _ENV.rz_FastAttack then
-            return _ENV.rz_FastAttack
+        if _ENV.rz_SuperFastAttack then
+            return _ENV.rz_SuperFastAttack
         end
 
         local FastAttack = {
-            Distance = 100,
+            Distance = 1000,
             attackMobs = true,
             attackPlayers = true,
             Equipped = nil
@@ -2208,7 +2208,7 @@ function AttackNoCoolDown()
                 equippedWeapon.LeftClickRemote:FireServer(direction, attackCount)
             end)
             attackCount = attackCount + 1
-            if attackCount > 10000000000000 then attackCount = 1 end
+            if attackCount > 10000000000000000000000000000000 then attackCount = 1 end
         end
     else
         local targets = {}
@@ -2230,10 +2230,10 @@ function AttackNoCoolDown()
             local attackEvent = storage:WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RE/RegisterAttack")
             local hitEvent = storage:WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RE/RegisterHit")
             if #targets > 0 then
-                attackEvent:FireServer(0.0000000000001)
+                attackEvent:FireServer(0.0000000000000000000000000000000001)
                 hitEvent:FireServer(mainTarget, targets)
             else
-                task.wait(0.0000000000001)
+                task.wait(0.00000000000000000000000000000000000000000000001)
             end
         end)
     end
